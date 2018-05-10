@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="platform-common" />
+        <module name="platform-ext-web" />
+        <module name="platform-persistence" />
+        <module name="platform-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="platform" target="1.7" />
+      <module name="platform-common" target="1.7" />
+      <module name="platform-demo" target="1.7" />
+      <module name="platform-ext-web" target="1.7" />
+      <module name="platform-persistence" target="1.7" />
+      <module name="platform-web" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

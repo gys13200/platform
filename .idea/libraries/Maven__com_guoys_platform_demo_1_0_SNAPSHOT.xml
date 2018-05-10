@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.guoys:platform-demo:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/guoys/platform-demo/1.0-SNAPSHOT/platform-demo-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/guoys/platform-demo/1.0-SNAPSHOT/platform-demo-1.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/guoys/platform-demo/1.0-SNAPSHOT/platform-demo-1.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

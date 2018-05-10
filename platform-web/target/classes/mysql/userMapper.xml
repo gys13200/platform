@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace名称空间 确保语句 唯一 -->
+<mapper namespace="com.guoys.platform.webcomponents.dao.UserDao">
+    <!-- 如果表列名 和 属性名 完全一致，省略resultMap -->
+
+    <!-- 根据用户名 查询角色和权限 -->
+    <resultMap type="com.guoys.platform.webcomponents.entity.DO.User" id="UserResultMap">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password" />
+        <collection property="roles" ofType="com.guoys.platform.webcomponents.entity.DO.Role">
+            <id property="id" column="roleId"/>
+            <result property="name" column="roleName"/>
+            <collection property="functions" ofType="com.guoys.platform.webcomponents.entity.DO.Function">
+                <id property="id" column="functionId"/>
+                <result property="name" column="functionName"/>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="selectUserByUsername" parameterType="java.lang.String" resultMap="UserResultMap">
+        SELECT
+            PLATFORM_USER.id,
+            PLATFORM_USER.PASSWORD,
+            PLATFORM_USER.username,
+            PLATFORM_ROLE.id roleId,
+            PLATFORM_ROLE. NAME roleName,
+            PLATFORM_FUNCTION.id functionId,
+            PLATFORM_FUNCTION. NAME functionName
+        FROM
+            PLATFORM_USER
+        LEFT OUTER JOIN PLATFORM_USER_ROLE ON PLATFORM_USER.id = PLATFORM_USER_ROLE.userid
+        LEFT OUTER JOIN PLATFORM_ROLE ON PLATFORM_USER_ROLE.roleid = PLATFORM_ROLE.id
+        LEFT OUTER JOIN PLATFORM_ROLE_FUNCTION ON PLATFORM_ROLE.id = PLATFORM_ROLE_FUNCTION.roleid
+        LEFT OUTER JOIN PLATFORM_FUNCTION ON PLATFORM_ROLE_FUNCTION.functionid = PLATFORM_FUNCTION.id
+        WHERE
+            username = #{username}
+    </select>
+
+</mapper>

@@ -1,0 +1,46 @@
+[
+  {
+    "text": "Panels",
+    "id": "panels",
+    "expanded": false,
+    "children": [
+      {
+        "id": "basic-panels",
+        "text": "Basic Panel",
+        "leaf": true
+      },
+      {
+        "id": "framed-panels",
+        "text": "Framed Panel",
+        "leaf": true
+      },
+      {
+        "id": "panel-header-position",
+        "text": "Header Positioning",
+        "leaf": false
+      }
+    ]
+  },
+  {
+    "text": "Grids",
+    "id": "grids",
+    "expanded": true,
+    "children": [
+      {
+        "id": "array-grid",
+        "text": "Array Grid",
+        "leaf": true
+      },
+      {
+        "id": "grouped-grid",
+        "text": "Grouped Grid",
+        "leaf": true
+      },
+      {
+        "id": "locking-grid",
+        "text": "Locking Grid",
+        "leaf": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+oracle=com.guoys.platform.persistence.dialect.OracleDialect
+mysql=com.guoys.platform.persistence.dialect.MySQL5Dialect
+sqlserver=com.guoys.platform.persistence.dialect.SqlServerDialect
+h2=com.guoys.platform.persistence.dialect.H2Dialect

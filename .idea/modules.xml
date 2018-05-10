@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/platform.iml" filepath="$PROJECT_DIR$/platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform-common/platform-common.iml" filepath="$PROJECT_DIR$/platform-common/platform-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform-ext-web/platform-ext-web.iml" filepath="$PROJECT_DIR$/platform-ext-web/platform-ext-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform-persistence/platform-persistence.iml" filepath="$PROJECT_DIR$/platform-persistence/platform-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform-web/platform-web.iml" filepath="$PROJECT_DIR$/platform-web/platform-web.iml" />
+    </modules>
+  </component>
+</project>

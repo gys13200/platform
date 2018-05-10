@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace名称空间 确保语句 唯一 -->
+<mapper namespace="com.guoys.platform.webcomponents.dao.FunctionDao">
+    <!-- 如果表列名 和 属性名 完全一致，省略resultMap -->
+
+    <select id="selectMenu"
+            parameterType="com.guoys.platform.webcomponents.entity.DO.User"
+            resultType="com.guoys.platform.webcomponents.entity.DO.Function">
+        <if test="!admin">
+            SELECT DISTINCT
+            PLATFORM_FUNCTION.*
+            FROM
+                PLATFORM_FUNCTION,
+                PLATFORM_ROLE_FUNCTION,
+                PLATFORM_USER_ROLE,
+                PLATFORM_USER
+            WHERE
+                PLATFORM_FUNCTION.id = PLATFORM_ROLE_FUNCTION.functionid
+            AND PLATFORM_ROLE_FUNCTION.roleid = PLATFORM_USER_ROLE.roleid
+            AND PLATFORM_USER_ROLE.userid = PLATFORM_USER.id
+            AND PLATFORM_FUNCTION.generatemenu = '1'
+            AND PLATFORM_USER.username = #{username}
+            ORDER BY
+                PLATFORM_FUNCTION.zindex
+        </if>
+        <if test="admin">
+            SELECT * FROM PLATFORM_FUNCTION
+            WHERE PLATFORM_FUNCTION.generatemenu = '1'
+            ORDER BY PLATFORM_FUNCTION.zindex
+        </if>
+    </select>
+
+</mapper>

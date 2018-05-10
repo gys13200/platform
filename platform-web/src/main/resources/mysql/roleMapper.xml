@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace名称空间 确保语句 唯一 -->
+<mapper namespace="com.guoys.platform.webcomponents.dao.RoleDao">
+    <!-- 如果表列名 和 属性名 完全一致，省略resultMap -->
+
+    <resultMap id="role" type="com.guoys.platform.webcomponents.entity.DO.Role">
+        <id property="id" column="id" />
+        <result property="description" column="description"/>
+        <result property="homePage" column="homePage" />
+        <result property="homePageTitle" column="homePageTitle" />
+        <result property="name" column="name" />
+        <collection property="functions" ofType="com.guoys.platform.webcomponents.entity.DO.Function" >
+            <id column="functionId" property="id"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectWithFunction"
+            parameterType="string"
+            resultMap="role">
+        SELECT
+            role.*, role_function.functionid
+        FROM
+            platform_role role
+        LEFT JOIN platform_role_function role_function ON role.id = role_function.roleId
+        WHERE role.id = #{id}
+    </select>
+
+</mapper>
